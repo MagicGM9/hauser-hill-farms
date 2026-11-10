@@ -1,0 +1,45 @@
+/* Warm garden greens and quiet, tactile interactions. */
+:root{--sage:#dce6bf;--acid:#dceba8;--cream:#faf7ed;--line:#b8c897;--green:#526c36}
+.harvest-sequence{background:#e8edda}
+.visit{background:radial-gradient(ellipse at 12% 8%,#f2f5df 0,transparent 65%),linear-gradient(145deg,#e3ebcb,#d2dfb2)}
+footer{background:linear-gradient(120deg,#e9eed7,#dce6bf);border-top:1px solid #b8c89766}
+footer .logo.footer-sign{width:128px;height:64px;margin:0;flex:none}
+.farm-header .visit-tag{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid #8fa46b;border-radius:14px;background:linear-gradient(175deg,#f0f5d8 0%,#d9e8b1 48%,#c6d99a 100%);color:#283c21;box-shadow:inset 0 1px 0 #fffdf2,0 4px 0 #93aa6d,0 7px 12px #354d2220;text-shadow:0 1px 0 #ffffff88;transition:translate .2s,box-shadow .2s,background .2s}
+.farm-header .visit-tag:active{translate:0 3px;box-shadow:inset 0 1px 3px #526c3620,0 1px 0 #93aa6d,0 2px 4px #354d2220}
+.farm-header nav a:not(.visit-tag){position:relative;transition:color .2s}
+.farm-header nav a:not(.visit-tag)::after{content:'';position:absolute;bottom:5px;left:15%;right:15%;height:2px;background:#6a883f;border-radius:3px;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.farm-header nav a[aria-current=location]::after{transform:scaleX(1)}
+.filters{gap:8px;border:0}
+.filters button{border:1px solid #a9be86;border-radius:12px;background:#eaf0da;transition:background .2s,box-shadow .2s,translate .2s;color:#30472d}
+.filters button[aria-pressed=true]{background:#344e2d;color:#fffdf1;border-color:#344e2d;box-shadow:inset 0 1px 0 #ffffff25,0 3px 8px #344e2d20}
+.filters button:active,.mobile-bar a:active{translate:0 2px}
+.produce-card .crop{border-radius:14px;box-shadow:0 3px 9px #283c2110;transition:box-shadow .3s,translate .3s}
+.produce-card{animation:produce-arrive .4s both;animation-delay:calc(var(--card-order,0)*25ms)}
+@keyframes produce-arrive{from{opacity:.25;translate:0 9px}to{opacity:1;translate:0 0}}
+.story-toggle{transition:background .2s,box-shadow .2s;border-radius:12px}
+.story-toggle span{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#ffffff15;transition:background .2s,rotate .25s}
+.story-toggle[aria-expanded=true] span{background:#ffffff30}
+.family-history:not([hidden]){animation:story-open .3s ease-out}
+@keyframes story-open{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+.provider-links .button svg,.visit-tag span{transition:translate .25s}
+.provider-links .button:active{translate:0 2px}
+.mobile-bar a{transition:background .2s,translate .2s}
+@media(hover:hover) and (pointer:fine){
+ .farm-header .visit-tag:hover{translate:0 -2px;background:linear-gradient(175deg,#f6f9e5,#e2efbe 48%,#d1e2ab);box-shadow:inset 0 1px 0 #fff,0 6px 0 #93aa6d,0 10px 18px #354d222a}
+ .farm-header nav a:not(.visit-tag):hover::after{transform:scaleX(1)}
+ .visit-tag:hover span{translate:2px -2px}
+ .filters button:hover{translate:0 -2px;box-shadow:0 4px 10px #344e2d1a}
+ .produce-card:hover .crop{translate:0 -4px;box-shadow:0 12px 22px #283c2120}
+ .story-toggle:hover{background:#ffffff0d;box-shadow:0 0 0 8px #ffffff0d}
+ .story-toggle:hover span{background:#ffffff30;rotate:8deg}
+ .provider-links .button:hover svg{translate:0 -2px}
+}
+@media(max-width:700px){
+ .farm-header .visit-tag{padding:0 11px;border-radius:12px;min-height:44px}
+ footer .logo.footer-sign{width:112px;height:56px}
+}
+@media(prefers-reduced-motion:reduce){
+ .produce-card,.family-history:not([hidden]){animation:none}
+ .farm-header .visit-tag,.produce-card .crop,.filters button,.provider-links .button,.mobile-bar a{translate:none!important}
+ .farm-header nav a::after{transition:none}
+}
