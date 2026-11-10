@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Berkshire Swash';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/sign-font-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bree Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/sign-font-1.ttf) format('truetype');
+}
